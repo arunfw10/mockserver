@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <style>
+
+    </style>
+    <body>
+        <div id="headings">
+
+        </div>
+
+    </body>
+    <script>
+         fetch('https://newsapi.org/v2/everything?q=keyword&apiKey=01b9af66437340a484a37c6add5effe3')
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function(res){
+        console.log(res);
+      getNews(res);
+    });
+
+    
+    let container=document.getElementById("headings");
+
+    function getNews(news) {
+       
+            let div = document.createElement("div");
+
+            let name = document.createElement("p");
+
+            name.innerText = news.title;
+
+            
+            let img = document.createElement("img");
+
+            img.src = news.urlToImage;
+            
+          div.append(name,image );
+
+          body.append(div);
+
+      
+    }
+    </script>
+</html>
